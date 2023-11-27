@@ -51,6 +51,7 @@ public class MedicalProvider {
     }
 
     public void PrintInfo(){
-        
+        System.out.println(firstName + " " + lastName + ": " + employeeID);
+        employeeOfficeLocation.PrintInfo();
     }
 }

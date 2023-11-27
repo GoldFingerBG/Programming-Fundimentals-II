@@ -61,6 +61,6 @@ public class OfficeLocation {
     }
     
     public void PrintInfo(){
-        
+        System.out.println(officeName + " at " + address + ", " + city + ", " + state + ", " + zip);
     }
 }

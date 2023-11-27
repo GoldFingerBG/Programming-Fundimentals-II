@@ -28,4 +28,12 @@ public class Nurse extends MedicalProvider{
         hoursWorked = 0;
     }
 
+    public void PrintInfo(){
+        super.PrintInfo();
+        System.out.println("You are a " + type + ". You worked " + hoursWorked + " hours and you make " + hourlyRate + ". So your paycheck comes out to " + WeeklyPayCheck());
+    }
+
+    public double WeeklyPayCheck(){
+        return hourlyRate*hoursWorked;
+    }
 }

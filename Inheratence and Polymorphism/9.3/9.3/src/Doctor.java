@@ -65,10 +65,11 @@ public class Doctor extends MedicalProvider{
     }
 
     public void PrintInfo(){
-
+        super.PrintInfo();
+        System.out.println("Your Specialty is " + specialty + ". Your license number is " + licenseNumber + " and you reside in room " + roomNumber + ". Your yearly salary is " + yearlySalary + ".");
     }
 
     public double WeeklyPayCheck(){
-        return 0;
+        return yearlySalary/52;
     }
 }
