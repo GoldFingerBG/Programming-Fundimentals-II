@@ -1,5 +1,5 @@
 public class OfficeLocation {
-    private String officeName, address, city, state, zip;
+    private String officeName, address, city, state, zip, phoneNumber;
 
 
     public OfficeLocation(String officeName, String address, String city, String state, String zip) {
