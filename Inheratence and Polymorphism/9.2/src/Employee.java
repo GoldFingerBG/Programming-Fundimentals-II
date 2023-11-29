@@ -44,10 +44,4 @@ public class  Employee {
         employeeBenefits.PrintBenefitInfo();
         employeeHomeAddress.PrintAddressInformation();
     }
-    public Address getAddress(Address a){
-        return a;
-    }
-    public Benefits getBenefits(Benefits a){
-        return a;
-    }
 }
