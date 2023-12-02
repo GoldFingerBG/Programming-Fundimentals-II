@@ -1,4 +1,8 @@
-public class MedicalProvider {
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList; 
+public class MedicalProvider implements FileWrite{
     private String firstName, lastName, employeeID;
     private OfficeLocation employeeOfficeLocation;
 
@@ -51,7 +55,19 @@ public class MedicalProvider {
     }
 
     public void PrintInfo(){
-        System.out.println(firstName + " " + lastName + ": " + employeeID);
+        System.out.println(employeeID + ", " + firstName + " " + lastName + ": " + employeeID);
         employeeOfficeLocation.PrintInfo();
+        System.out.println();
     }
+
+    @Override
+    public void writeToFile(ArrayList<MedicalProvider> f) {
+        
+    }
+
+    public double WeeklyPayCheck(){
+        return 0;
+    }
+
+    
 }

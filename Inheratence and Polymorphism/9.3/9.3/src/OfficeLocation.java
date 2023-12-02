@@ -2,12 +2,13 @@ public class OfficeLocation {
     private String officeName, address, city, state, zip, phoneNumber;
 
 
-    public OfficeLocation(String officeName, String address, String city, String state, String zip) {
+    public OfficeLocation(String officeName, String address, String city, String state, String zip, String phoneNumber) {
         this.officeName = officeName;
         this.address = address;
         this.city = city;
         this.state = state;
         this.zip = zip;
+        this.phoneNumber = phoneNumber;
     }
 
 
@@ -17,6 +18,7 @@ public class OfficeLocation {
         city = "No City";
         state = "No State";
         zip = "No Zip";
+        phoneNumber = "No Number";
     }
 
 
@@ -62,5 +64,13 @@ public class OfficeLocation {
     
     public void PrintInfo(){
         System.out.println(officeName + " at " + address + ", " + city + ", " + state + ", " + zip);
+    }
+
+    public String getPhoneNumber(){
+        return this.phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber){
+        this.phoneNumber = phoneNumber;
     }
 }

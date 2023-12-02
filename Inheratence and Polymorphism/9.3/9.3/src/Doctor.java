@@ -1,4 +1,8 @@
-public class Doctor extends MedicalProvider{
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class Doctor extends MedicalProvider implements FileWrite{
     private String specialty, licenseNumber, roomNumber;
     private double yearlySalary;
 
@@ -64,12 +68,28 @@ public class Doctor extends MedicalProvider{
         this.yearlySalary = yearlySalary;
     }
 
+    @Override
     public void PrintInfo(){
-        super.PrintInfo();
-        System.out.println("Your Specialty is " + specialty + ". Your license number is " + licenseNumber + " and you reside in room " + roomNumber + ". Your yearly salary is " + yearlySalary + ".");
+        System.out.println(super.getEmployeeID() + ", Type " + getClass().getSimpleName()+ ", " + super.getFirstName() + " " + super.getLastName() + ", " + super.getEmployeeOfficeLocation().getAddress() + ", \n " + super.getEmployeeOfficeLocation().getCity() + ", " + super.getEmployeeOfficeLocation().getState() + ", " + super.getEmployeeOfficeLocation().getZip() + ", and " + WeeklyPayCheck() + " Phone Number: " + super.getEmployeeOfficeLocation().getPhoneNumber());
+        System.out.println();
     }
 
     public double WeeklyPayCheck(){
         return yearlySalary/52;
+    }
+
+    @Override
+    public void writeToFile(ArrayList<MedicalProvider> f) {
+        try{
+            FileWriter file = new FileWriter("Medical.csv");
+            for(int i = 0; i < f.size(); i++){
+            file.write(f.get(i).getEmployeeID() + ", Type " + f.get(i).getClass().getSimpleName()+ ", " + f.get(i).getFirstName() + " " + f.get(i).getLastName() + ", " + f.get(i).getEmployeeOfficeLocation().getAddress() + ", " + f.get(i).getEmployeeOfficeLocation().getCity() + ", " + f.get(i).getEmployeeOfficeLocation().getState() + ", " + f.get(i).getEmployeeOfficeLocation().getZip() + ", and " + f.get(i).WeeklyPayCheck() + " Phone Number: " + f.get(i).getEmployeeOfficeLocation().getPhoneNumber());
+            }
+            System.out.println("Written to file!");
+            file.close();
+        }catch(Exception e){
+            e.getStackTrace();
+        }
+
     }
 }
