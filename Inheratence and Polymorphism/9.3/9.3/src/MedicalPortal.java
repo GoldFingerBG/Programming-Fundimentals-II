@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-public class App {
+public class MedicalPortal {
     public static void main(String[] args) throws Exception {
         ArrayList<MedicalProvider> dong = new ArrayList<MedicalProvider>();
         OfficeLocation ol = new OfficeLocation("Nathaniel's Hospital", "3330 Farley", "San Antonio", "Texas", "78253", "2105136795");
